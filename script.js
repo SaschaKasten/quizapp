@@ -57,6 +57,8 @@ let questions = [
     }
 ];
 
+let rightQuestions = 0;
+
 let currentQuestion = 0;
 
 
@@ -70,7 +72,14 @@ function showQuestion() {
 
     if (currentQuestion >= questions.length) {
         // TODO: Show End Screen
-    } else { 
+        document.getElementById('endScreen').style = '';
+        document.getElementById('questionBody').style = 'display: none';
+
+        document.getElementById('amount-of-questions').innerHTML = questions.length;
+        document.getElementById('amount-of-right-questions').innerHTML = rightQuestions;
+        document.getElementById('header-img').src = 'img/trophy.png';
+
+    } else {
 
         let question = questions[currentQuestion];
 
@@ -90,8 +99,9 @@ function answer(selection) {
     let idOfRightAnswer = `answer_${question['right_answer']}`;
 
 
-    if (selectedQuestionNumber == question['right_answer']) {
+    if (selectedQuestionNumber == question['right_answer']) { // Richtige Frage beantwortet
         document.getElementById(selection).parentNode.classList.add('bg-success');
+        rightQuestions++;
     } else {
         console.log('Falsche Antwort!');
         document.getElementById(selection).parentNode.classList.add('bg-danger');

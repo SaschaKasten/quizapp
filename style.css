@@ -31,3 +31,16 @@ body {
 .bg-success, .bg-danger {
     color: white;
 }
+
+.width-100 {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.final-headline {
+    font-size: 36px;
+    margin-bottom: 32px;
+}
