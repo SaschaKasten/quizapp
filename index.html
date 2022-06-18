@@ -31,6 +31,10 @@
         <div class="card quiz-card">
             <img src="img/pencil.jpg" id="header-img" class="card-img-top">
 
+            <div class="progress">
+                <div class="progress-bar" id="progress-bar" role="progressbar" style="width: 0%;">25%</div>
+            </div>
+
             <div class="card-body" id="endScreen" style="display: none;">
                 <div class="text-center final-headline">Quiz beendet!
                 </div>
@@ -42,6 +46,9 @@
 
                 </div>
 
+                <div class="button-row">
+                    <button onclick="restartGame()" class="btn btn-primary">Erneut spielen</button>
+                </div>
 
             </div>
 

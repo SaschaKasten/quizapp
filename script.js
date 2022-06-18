@@ -71,7 +71,7 @@ function init() {
 function showQuestion() {
 
     if (currentQuestion >= questions.length) {
-        // TODO: Show End Screen
+        //  Show End Screen
         document.getElementById('endScreen').style = '';
         document.getElementById('questionBody').style = 'display: none';
 
@@ -79,7 +79,14 @@ function showQuestion() {
         document.getElementById('amount-of-right-questions').innerHTML = rightQuestions;
         document.getElementById('header-img').src = 'img/trophy.png';
 
-    } else {
+    } else { // Show Question
+
+        let percent = (currentQuestion + 1) / questions.length;
+        percent = Math.round(percent * 100);
+        document.getElementById('progress-bar').innerHTML = `${percent} %`;
+        document.getElementById('progress-bar').style = `width: ${percent}%;`;
+
+        console.log('Fortschrit:', percent);
 
         let question = questions[currentQuestion];
 
@@ -127,4 +134,11 @@ function resetAnswerButtons() {
     document.getElementById('answer_3').parentNode.classList.remove('bg-success');
     document.getElementById('answer_4').parentNode.classList.remove('bg-danger');
     document.getElementById('answer_4').parentNode.classList.remove('bg-success');
+}
+
+function restartGame() {
+    document.getElementById('header-img').src = 'img/pencil.jpg';
+    rightQuestions = 0;
+    currentQuestion = 0;
+    init();
 }

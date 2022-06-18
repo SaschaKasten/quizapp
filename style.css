@@ -42,5 +42,11 @@ body {
 
 .final-headline {
     font-size: 36px;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
 }
