@@ -58,7 +58,6 @@ let questions = [
 ];
 
 let rightQuestions = 0;
-
 let currentQuestion = 0;
 
 
@@ -74,10 +73,8 @@ function showQuestion() {
         //  Show End Screen
         document.getElementById('endScreen').style = '';
         document.getElementById('questionBody').style = 'display: none';
-
         document.getElementById('amount-of-questions').innerHTML = questions.length;
-        document.getElementById('amount-of-right-questions').innerHTML = rightQuestions;
-        document.getElementById('header-img').src = 'img/trophy.png';
+        document.getElementById('amount-of-right-questions').innerHTML = rightQuestions; // s.Zeile 108 rightQuestions++
 
     } else { // Show Question
 
