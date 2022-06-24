@@ -135,7 +135,9 @@ function resetAnswerButtons() {
 }
 
 function restartGame() {
-    document.getElementById('header-img').src = 'img/pencil.jpg';
+    document.getElementById('header-image').src = 'img/pencil.jpg';
+    document.getElementById('questionBody').style = ''; // questionBody wieder anzeigen
+    document.getElementById('endScreen').style = 'display: none'; // Endscreen Ausblenden
     rightQuestions = 0;
     currentQuestion = 0;
     init();
